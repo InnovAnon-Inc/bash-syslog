@@ -6,37 +6,43 @@ services:
     image:           innovanon/bash-syslog
     container_name:  bash
     volumes:
-      - apt-cacher-ng:/mnt/apt-cacher-ng:rw
+      - acng:/mnt/acng:rw
+      - aircaps:/mnt/aircaps:rw
+      - airpsks:/mnt/airpsks:rw
       - bash-root:/root:rw
       #- bash-root:/mnt/bash-root:rw
-      #- dcc-afl:/mnt/dcc-afl:rw
-      #- dcc-debian:/mnt/dcc:rw
+      - ca-certs:/mnt/ca-certs:rw
+      - ca-crl:/mnt/ca-crl:rw
+      - ca-csr:/mnt/ca-csr:rw
+      - ca-private:/mnt/ca-private:rw
       - ccache-etc:/mnt/ccache-etc:rw
       - ccache-redis:/mnt/ccache-redis:rw
       - dcc-kali:/mnt/dcc-kali:rw
       - dcc-ubuntu:/mnt/dcc-ubuntu:rw
       - dcc-voidlinux:/mnt/dcc-voidlinux:rw
-      #- dns-keys:/mnt/dns-keys:rw
-      #- dns-zones:/mnt/dns-zones:rw
-      #- ovpn1-conf:/mnt/ovpn1-conf:rw
-      #- ovpn2-conf:/mnt/ovpn2-conf:rw
-      - pgdata:/mnt/pgdata:rw
+      - git-keys:/mnt/git-keys:rw
+      - git-repos:/mnt/git-repos:rw
+      - import-db:/mnt/import-db:rw
+      - msfrpcd:/mnt/msfrpcd:rw
+      #- pgdata:/mnt/pgdata:rw
+      - recond:/mnt/recond:rw
       - redis-certs:/mnt/redis-certs:rw
-      #- redis-conf:/mnt/redis-conf:rw
       - redis-data:/mnt/redis-data:rw
       - ../../mnt/test:/mnt/test:rw
       - slapd-certs:/mnt/slapd-certs:rw
       - slapd-root:/mnt/slapd-root:rw
-      #- syslog-client:/mnt/syslog-client:rw
       - syslog-client:/etc/rsyslog.d:ro
       - syslog-client:/mnt/syslog-client:rw
       - syslog-etc:/mnt/syslog-etc:rw
       - syslog-log:/mnt/syslog-log:rw
+      - teamhack:/mnt/teamhack:rw
       - tor-etc:/mnt/tor-etc
       - vpn-c2-etc:/mnt/vpn-c2-etc:rw
       - vpn-s-etc:/mnt/vpn-s1-etc:rw
       - vpn-s-peer1:/mnt/vpn-s1-peer1:rw
-      #- vpn-s1-mod:/mnt/vpn-s1-mod:rw
+      - wordlists:/mnt/wordlists:rw
+    stdin_open: true
+    tty:        true
 
     restart:         always
     depends_on:
