@@ -23,5 +23,6 @@ RUN apt update                     \
 VOLUME ["/root"]
 
 RUN test -x  /usr/bin/env
+RUN command -v bash
 ENTRYPOINT ["/usr/bin/env", "bash", "-i"]
 
