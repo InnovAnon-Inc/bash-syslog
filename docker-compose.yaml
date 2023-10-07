@@ -43,6 +43,8 @@ services:
       - wordlists:/mnt/wordlists:rw
     stdin_open: true
     tty:        true
+    ports:
+      - "0.0.0.0:4444:4444/tcp"
 
     restart:    no
     depends_on:
