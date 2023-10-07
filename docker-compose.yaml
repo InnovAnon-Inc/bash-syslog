@@ -44,7 +44,7 @@ services:
     stdin_open: true
     tty:        true
 
-    restart:         always
+    restart:    no
     depends_on:
       syslog:
         condition:   service_started
